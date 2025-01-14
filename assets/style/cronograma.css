@@ -178,7 +178,7 @@
     left: 0;
     margin-left: 10px;
   }
-  .buttons-back{
+  .buttons-back:hover{
     background-color: var(--button-hover);
     cursor: pointer;
   }
