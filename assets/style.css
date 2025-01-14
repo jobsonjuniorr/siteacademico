@@ -9,11 +9,14 @@ body{
 }
 
 :root {
-    --menu: #2D87BB;
-    --blue-river: #2D87BB;
+    --menu: #123524;
+    --blue-river: #123524;
     --yellow-sun: #F7C843;
-    --background: #3B9A57;
-    --text: #fff;
+    --background: #123524;
+    --text: #EFE3C2;
+    --text-title: #fff;
+    --text-link: #3d789b;
+    --paragraf: #fff;
 }
   header {
     background-color: var(--menu);
@@ -64,6 +67,10 @@ body{
   .nav-links li a:hover {
     color: var(--yellow-sun);
   }
+  .logo-site{
+    width: 100px;
+    border-radius: 50%;
+  }
   
   .init-presentation{
     display: flex;
@@ -83,9 +90,11 @@ body{
   }
   .init-title{
     font-size: 2rem;
+    color: var(--text-title);
   }
   .init-paragraf{
     font-size: 1rem;
+    color: var(--paragraf);
   }
   .init-button{
     border: none;
@@ -102,6 +111,7 @@ body{
   }
   .init-img{
   width: 600px;
+  border-radius: 10px;
   }
 
   .about-presentation{
@@ -117,16 +127,20 @@ body{
   }
   .about-title{
     font-size: 2rem;
+    color: var(--text-title);
   }
   .box-about-paragraf{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    height: 80%;
+    height:85%;
+    color: var(--paragraf);
+
   }
   .about-img{
   width: 650px;
+  border-radius: 10px;
   }
 
   .event-presentation{
@@ -148,9 +162,11 @@ body{
 
   .firt-box-event h3{
     font-size: 2rem;
+    color: var(--text-title);
   }
   .firt-box-event p{
     text-align: center;
+    color: var(--paragraf);
   }
   .second-box-event{
     display: flex;
@@ -172,22 +188,123 @@ body{
   }
   .extecion-second-box h4{
     font-size: 1.3rem;
+    color: var(--text-title);
   }
   .extecion-second-box p{
     font-size: 1rem;
     width: 100%;
     text-align: center;
+    color: var(--paragraf);
   }
-
-
-
-
-
-
   .img-event{
     width: 70px;
     border-radius: 10px;
   }
+
+  .speaker-presentation{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+ }
+ .orden-speaker-box{
+  display: flex;
+  width: 100%;
+  gap: 10px;
+  padding: 10px;
+  align-items: center;
+  justify-content: center;
+ }
+ .speaker-box{
+  width: 544px;
+  height: 264px;
+  background-color: var(--yellow-sun);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+ }
+ .speaker-presentation h3{
+  font-size: 2rem;
+  color: var(--text-title);
+ }
+ .speaker-box h5{
+  font-size: 1.3rem;
+  color: var(--paragraf);
+ }
+ .speaker-box p{
+  color: var(--paragraf);
+ }
+ .speaker-box a{
+  text-decoration: none;
+  color: var(--text-link);
+  cursor: pointer;
+  
+ }
+ .speaker-box a:hover{
+  text-decoration: underline;
+ }
+ .speaker-box img{
+  width: 143.48px;
+  height:143.48px;
+  border-radius: 50%;
+ } 
+
+ .presentation-links{
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;  
+ }
+ .box-presentation-links{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+ }
+ .box-presentation-links p{
+  font-size: 1rem;
+  width: 60%;
+  color: var(--paragraf);
+ }
+ .box-presentation-links h3{
+  font-size: 2rem;
+  color: var(--text);
+ }
+ .box-presentation-links p{
+   text-align: center;
+ }
+ .social-button{
+  border: none;
+  padding: 10px;
+  background-color: var(--text);
+  border-radius: 10px;
+  width: 100%;
+  transition: ease 0.5s;
+}
+.social-button:hover{
+  background-color: var(--menu);
+  cursor: pointer;
+}
+footer{
+  width: 100%;
+  background-color: var(--text-link);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.box-footer{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.box-footer img{
+ width: 100px;
+}
   @media (max-width: 768px) {
     .menu-toggle {
       display: block;
