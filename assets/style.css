@@ -34,6 +34,9 @@ body{
     font-weight: bold;
     color: var(--yellow-sun);
   }
+  .text-logo{
+    color: var(--background);
+  }
   
   .menu-toggle {
     display: none;
@@ -62,7 +65,7 @@ body{
     color: var(--yellow-sun);
   }
   
-  .init-apresetetion{
+  .init-presentation{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -101,7 +104,7 @@ body{
   width: 600px;
   }
 
-  .about-apresetetion{
+  .about-presentation{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -126,6 +129,65 @@ body{
   width: 650px;
   }
 
+  .event-presentation{
+      height: 100vh;
+      width: 100%;
+      display: flex ;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+  }
+
+  .firt-box-event{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width:50%;
+  }
+
+  .firt-box-event h3{
+    font-size: 2rem;
+  }
+  .firt-box-event p{
+    text-align: center;
+  }
+  .second-box-event{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+  }
+  .extecion-second-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 352px;
+    height: 352px;
+    padding: 10px;
+    border-bottom: 1px solid white;
+    box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+  }
+  .extecion-second-box h4{
+    font-size: 1.3rem;
+  }
+  .extecion-second-box p{
+    font-size: 1rem;
+    width: 100%;
+    text-align: center;
+  }
+
+
+
+
+
+
+  .img-event{
+    width: 70px;
+    border-radius: 10px;
+  }
   @media (max-width: 768px) {
     .menu-toggle {
       display: block;
@@ -135,14 +197,14 @@ body{
       display: none;
       flex-direction: column;
       position: absolute;
-      top: 4rem;
+      top: 3.5rem;
       right: 0;
-      height: 100%;
+      height: 100vh;
       background-color: var(--menu);
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       border-radius: 0.5rem;
       padding: 1rem;
-      width: 200px;
+      width: 100%;
       gap: 1rem;
       z-index: 10;
     }
@@ -150,5 +212,24 @@ body{
     .nav-links.active {
       display: flex;
     }
+
+    .init-presentation{
+      flex-direction: column-reverse;
+
+    }
+    .init-img{
+      width: 350px;
+      }
+    .init-box-firts{
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      }
+      .init-title{
+        text-align: center;
+        font-size: 1.5rem;
+      }
   }
   
