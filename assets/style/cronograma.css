@@ -164,7 +164,24 @@
     background-color: var(--button-hover);
     cursor: pointer;
   }
-  
+  .buttons-back{
+    border: none;
+    padding: 10px;
+    background-color: var(--paragraf);
+    color: var(--text-dark);
+    border-radius: 10px;
+    width: 70px;
+    transition: ease 0.5s;
+    margin-top: 10px;
+    position: absolute; 
+    top: 0;
+    left: 0;
+    margin-left: 10px;
+  }
+  .buttons-back{
+    background-color: var(--button-hover);
+    cursor: pointer;
+  }
   .alert-box {
     position: fixed;
     top: 20px;
