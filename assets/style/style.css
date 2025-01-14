@@ -157,7 +157,7 @@ header {
 .box-about-paragraf {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  gap: 20px;
   align-items: center;
   height: 85%;
   color: var(--paragraf);
@@ -465,7 +465,7 @@ footer {
   .init-presentation {
     flex-direction: column-reverse;
     gap: 40px;
-    height: 110vh;
+    height: 100vh;
   }
 
   .init-img {
@@ -499,6 +499,7 @@ footer {
     width: 100%;
     text-align: center;
     color: var(--paragraf);
+    font-size: 0.9rem;
   }
 
   .about-presentation {
@@ -517,7 +518,7 @@ footer {
   }
 
   .about-title {
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: var(--text-title);
   }
 
@@ -526,13 +527,15 @@ footer {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    height: 85%;
+    height: 100%;
     color: var(--paragraf);
-
+    gap: 10px;
   }
-
+  .about-paragraf{
+    font-size: 0.9rem;
+  }
   .about-img {
-    width: 200px;
+    width: 225px;
     border-radius: 10px;
   }
 
@@ -554,12 +557,13 @@ footer {
   }
 
   .firt-box-event h3 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: var(--text-title);
   }
 
   .firt-box-event p {
     text-align: center;
+    font-size: 0.9rem;
     color: var(--paragraf);
 
   }
@@ -614,6 +618,7 @@ footer {
   .orden-speaker-box {
     display: flex;
     width: 100%;
+    height: 100%;
     gap: 10px;
     padding: 10px;
     align-items: center;
@@ -623,7 +628,7 @@ footer {
 
   .presentation-links {
     display: flex;
-    height: 110%;
+    height: 100vh;
     align-items: center;
     justify-content: center;
     flex-direction: column;
