@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro e Seleção de Cursos</title>
+    <link rel="stylesheet" href="assets/style/cronograma.css">
+</head>
+
+<body>
+    <form id="cadastroForm" class="box-forms">
+        <img class="logo" src="assets/image/logoatt.png" alt="">
+        <h1>Cadastro e Seleção de Cursos</h1>
+        <div class="forms">
+            <div id="alert-box" class="alert-box hidden"></div>
+            <div class="input-box">
+                <div>
+                    <label for="nome">Nome Completo:</label>
+                    <input class="input-enter" type="text" id="nome" name="nome" required>
+                </div>
+                <div>
+                    <label for="cpf">CPF:</label>
+                    <input class="input-enter" type="text" id="cpf" name="cpf" required>
+                </div>
+                <div>
+                    <label for="email">Email:</label>
+                    <input class="input-enter" type="email" id="email" name="email" required>
+                </div>
+                <div>
+                    <label for="celular">Celular:</label>
+                    <input class="input-enter" type="tel" id="celular" name="celular" required>
+                </div>
+                <div>
+                    <label for="categoria">Categoria:</label>
+                    <input class="input-enter" type="text" id="categoria" name="categoria" required>
+                </div>
+            </div>
+
+            <!-- Seleção de Eventos -->
+            <div class="select-menu">
+                <div class="select-menu-box">
+
+                    <div class="options">
+                        <label for="tipoEvento">Tipo de Evento:</label>
+                        <select class="select" id="tipoEvento">
+                            <option class="select-value" value="minicurso">Mini Curso</option>
+                            <option class="select-value" value="palestra">Palestra</option>
+                        </select>
+
+                        <label for="evento">Evento:</label>
+                        <select class="select" id="evento">
+                            <!-- Opções serão geradas dinamicamente -->
+                        </select>
+                        <button class="buttons" type="button" id="adicionarEvento">Adicionar</button>
+                    </div>
+
+
+                    <div class="list-event">
+
+                        <h3>Eventos Selecionados:</h3>
+
+                        <ul id="eventosSelecionados" class="list-value">
+                            <!-- Lista dos eventos selecionados -->
+                        </ul>
+
+                    </div>
+
+
+                    <div class="valor-final">
+                        <h3>Valor total: <span id="valorTotal">40,00R$</span></h3>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+        <button class="buttons-register" type="submit">Cadastrar</button>
+    </form>
+
+    <script src="assets/js/forms.js"></script>
+</body>
+
+</html>
