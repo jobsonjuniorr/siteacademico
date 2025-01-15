@@ -22,10 +22,8 @@
   header {
     background-color: var(--menu);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: fixed;
     width: 100%;
     box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.3);
-  
   }
   
   .navbar {
@@ -55,7 +53,7 @@
     background: none;
     border: none;
     cursor: pointer;
-    color: var(--card);
+    color: var(--paragraf);
   }
   
   .nav-links {
@@ -269,14 +267,29 @@
 }
 
 @media (max-width: 768px){
-    body {
-        background-color: var(--background);
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-      }
+  .menu-toggle {
+    display: block;
+  }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 3.5rem;
+    right: 0;
+    height: 100vh;
+    background-color: var(--background);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    width: 100%;
+    gap: 1rem;
+    z-index: 10;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+ 
     .forms{
         background-color: var(--card);
         display: flex;
@@ -349,6 +362,12 @@
     flex-direction: column;
     height: 100%;
     width: 100%;
+    }
+    .text-title{
+      font-size: 1rem;
+      border-left: 1px solid white;
+      padding: 10px;
+      text-transform: uppercase;
     }
  
 }

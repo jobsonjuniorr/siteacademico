@@ -14,6 +14,16 @@ const eventosDisponiveis = [
     { id: 6, tipo: "palestra", nome: "Metodologias Ágeis na Prática", valor: 10 }
 ];
 
+
+const menuToggle = document.querySelector('.menu-toggle');
+const navLinks = document.querySelector('.nav-links');
+
+
+menuToggle.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+});
+
+
 function showAlert(message, type = "success") {
         const alertBox = document.getElementById("alert-box");
         
@@ -105,7 +115,7 @@ tipoEventoSelect.addEventListener("change", () => {
 });
 
 adicionarEventoBtn.addEventListener("click", adicionarEvento);
-
+const form = document.getElementById("cadastroForm");
 form.addEventListener("submit", async (event) => {
     event.preventDefault();
 
