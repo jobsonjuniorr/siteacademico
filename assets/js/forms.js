@@ -51,7 +51,7 @@ function adicionarEvento() {
     const evento = eventosDisponiveis.find(e => e.id === eventoId);
 
     if (eventosSelecionados.some(e => e.id === eventoId)) {
-        alert("Este evento já foi selecionado.");
+        showAlert("Este evento já foi selecionado!", "error");
         return;
     }
 
@@ -106,8 +106,7 @@ tipoEventoSelect.addEventListener("change", () => {
 
 adicionarEventoBtn.addEventListener("click", adicionarEvento);
 
-const form = document.getElementById("cadastroForm");
-form.addEventListener("submit", (event) => {
+form.addEventListener("submit", async (event) => {
     event.preventDefault();
 
     const dados = {
@@ -120,7 +119,33 @@ form.addEventListener("submit", (event) => {
         valorTotal: valorTotalElement.textContent
     };
 
-    console.log("Dados enviados:", dados);
-    showAlert("Cadastro realizado com sucesso!","success")
+    try {
+        const response = await fetch('http://localhost:3000/api/cadastro', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(dados)
+        });
+
+        const result = await response.json();
+        console.log("Resposta do backend:", result);
+
+        if (response.ok) {
+            showAlert(result.message, "success");
+        } else {
+            showAlert("Erro ao cadastrar!", "error");
+        }
+
+        // Limpar formulário e eventos selecionados
+        form.reset(); // Reseta os campos do formulário
+        eventosSelecionados = []; // Reseta o array de eventos selecionados
+        eventosSelecionadosUl.innerHTML = ""; // Limpa a lista visual dos eventos
+        valorTotalElement.textContent = `${baseValor.toFixed(2)}R$`; // Reseta o valor total
+
+    } catch (error) {
+        console.error("Erro:", error);
+        showAlert("Erro ao conectar ao servidor!", "error");
+    }
 });
+
+
 

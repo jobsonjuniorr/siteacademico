@@ -9,10 +9,32 @@
 </head>
 
 <body>
-    
+
+    <header>
+        <nav class="navbar">
+
+          <div class="logo">
+          <a href="#inicio"><img class="logo-site" src="assets/image/logoatt.png" alt="Logo"></a>
+          <h1 class="text-title">Cadastro e Seleção de Cursos</h1>
+          </div>
+          
+          <button class="menu-toggle" aria-label="Abrir menu">
+            ☰
+          </button>
+          
+          <ul class="nav-links">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="index.html">Sobre</a></li>
+            <li><a href="index.html">Evento</a></li>
+            <li><a href="index.html">Palestrantes</a></li>
+            <li><a href="index.html">Inscreva-se</a></li>
+            <li><a href="index.html">Local</a></li>
+          </ul>
+        </nav>
+      </header>
+
     <form id="cadastroForm" class="box-forms">
-        <img class="logo" src="assets/image/logoatt.png" alt="">
-        <h1>Cadastro e Seleção de Cursos</h1>
+        
         <div class="forms">
             <div id="alert-box" class="alert-box hidden"></div>
             <div class="input-box">
@@ -45,8 +67,8 @@
                     <div class="options">
                         <label for="tipoEvento">Tipo de Evento:</label>
                         <select class="select" id="tipoEvento">
-                            <option class="select-value" value="minicurso">Mini Curso</option>
-                            <option class="select-value" value="palestra">Palestra</option>
+                            <option class="select-value" value="minicurso">Minicursos</option>
+                            <option class="select-value" value="palestra">Palestras</option>
                         </select>
 
                         <label for="evento">Evento:</label>
@@ -77,7 +99,9 @@
 
             </div>
         </div>
-        <button class="buttons-register" type="submit">Cadastrar</button>
+        <div class="footer">
+            <button class="buttons-register" type="submit">Cadastrar</button>
+        </div>
     </form>
 
     <script src="assets/js/forms.js"></script>
