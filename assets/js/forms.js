@@ -115,6 +115,7 @@ tipoEventoSelect.addEventListener("change", () => {
 });
 
 adicionarEventoBtn.addEventListener("click", adicionarEvento);
+
 const form = document.getElementById("cadastroForm");
 form.addEventListener("submit", async (event) => {
     event.preventDefault();
@@ -141,15 +142,18 @@ form.addEventListener("submit", async (event) => {
 
         if (response.ok) {
             showAlert(result.message, "success");
+            setTimeout(()=>{
+                window.location.href = "/index.html"
+            },3000) 
         } else {
             showAlert("Erro ao cadastrar!", "error");
         }
 
-        // Limpar formulário e eventos selecionados
-        form.reset(); // Reseta os campos do formulário
-        eventosSelecionados = []; // Reseta o array de eventos selecionados
-        eventosSelecionadosUl.innerHTML = ""; // Limpa a lista visual dos eventos
-        valorTotalElement.textContent = `${baseValor.toFixed(2)}R$`; // Reseta o valor total
+      
+        form.reset(); 
+        eventosSelecionados = []; 
+        eventosSelecionadosUl.innerHTML = ""; 
+        valorTotalElement.textContent = `${baseValor.toFixed(2)}R$`; 
 
     } catch (error) {
         console.error("Erro:", error);

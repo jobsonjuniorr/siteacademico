@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro e Seleção de Cursos</title>
     <link rel="stylesheet" href="assets/style/cronograma.css">
-    <link rel="shortcut icon" href="assets/image/logo.jpeg" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/image/favicon-16x16.png" type="image/x-icon">
 </head>
 
 <body>
@@ -28,36 +28,40 @@
             <li><a href="index.html">Sobre</a></li>
             <li><a href="index.html">Evento</a></li>
             <li><a href="index.html">Palestrantes</a></li>
-            <li><a href="index.html">Inscreva-se</a></li>
             <li><a href="index.html">Local</a></li>
           </ul>
         </nav>
       </header>
 
-    <form id="cadastroForm" class="box-forms">
+    <form id="cadastroForm" class="box-forms" method="post">
         
         <div class="forms">
             <div id="alert-box" class="alert-box hidden"></div>
+            
             <div class="input-box">
                 <div>
-                    <label for="nome">Nome Completo:</label>
+                    <label for="nome">Nome Completo</label>
                     <input class="input-enter" type="text" id="nome" name="nome" required>
                 </div>
                 <div>
-                    <label for="cpf">CPF:</label>
+                    <label for="cpf">CPF</label>
                     <input class="input-enter" type="text" id="cpf" name="cpf" required>
                 </div>
                 <div>
-                    <label for="email">Email:</label>
+                    <label for="email">Email</label>
                     <input class="input-enter" type="email" id="email" name="email" required>
                 </div>
                 <div>
-                    <label for="celular">Celular:</label>
+                    <label for="celular">Celular</label>
                     <input class="input-enter" type="tel" id="celular" name="celular" required>
                 </div>
-                <div>
-                    <label for="categoria">Categoria:</label>
-                    <input class="input-enter" type="text" id="categoria" name="categoria" required>
+                <div class="select-primary">
+                    <label for="">Categoria</label>
+
+                    <select  class="select" id="categoria">
+                        <option class="select-value"  value="professor">Professor</option>
+                        <option class="select-value" value="aluno">Aluno</option>
+                    </select>
                 </div>
             </div>
 
@@ -66,13 +70,13 @@
                 <div class="select-menu-box">
 
                     <div class="options">
-                        <label for="tipoEvento">Tipo de Evento:</label>
+                        <label for="tipoEvento">Tipo</label>
                         <select class="select" id="tipoEvento">
                             <option class="select-value" value="minicurso">Minicursos</option>
                             <option class="select-value" value="palestra">Palestras</option>
                         </select>
 
-                        <label for="evento">Evento:</label>
+                        <label for="evento">Evento</label>
                         <select class="select" id="evento">
                             <!-- Opções serão geradas dinamicamente -->
                         </select>

@@ -70,7 +70,7 @@
     font-weight: 500;
     transition: color 0.3s ease;
   }
-  
+
   .nav-links li a:hover {
     color: var(--button-hover);
   }
@@ -112,6 +112,7 @@
     height: 100%;
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-direction: column;
     padding: 15px;
     gap: 5px;
@@ -188,14 +189,27 @@
   .list-event{
     height: 100%;
   }
+  .select-primary{
+    display: flex;
+    flex-direction: column;
+  }
+  .select-primary select{
+    color:var(--text-dark);
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    width: 35%;
+  }
+
   .select{
     color:var(--text-dark);
-    padding: 5px;
+    padding: 10px;
     border-radius: 5px;
     border: none;
   }
   .select-value{
     color: var(--text-dark);
+    
   }
   .select option{
         background-color: var(--input); 
