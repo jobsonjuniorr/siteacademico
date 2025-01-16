@@ -8,7 +8,6 @@
   
   body {
     background-color: var(--background);  
-    height: 100vh;
     width: 100%;  
     display: flex;
     flex-direction: column;
@@ -99,7 +98,6 @@
     background-color: var(--card);
     display: flex;
     width: 100%;
-    align-items: center;
     justify-content: space-around;
     height: 100%;
     padding: 10px;
@@ -167,6 +165,7 @@
 
   #eventosSelecionados{
     list-style: none;
+    
 }
     #eventosSelecionados li{
     margin-bottom: 3px;
@@ -251,8 +250,9 @@
   .alert-box {
     position: fixed;
     top: 20px;
-    right: 20px;
+    right: 10px;
     padding: 15px 20px;
+    width: 31%;
     background-color: #28a745; 
     color: white;
     font-size: 16px;
@@ -262,6 +262,7 @@
     z-index: 1000;
     opacity: 1;
     transition: opacity 0.3s ease, transform 0.3s ease;
+    text-align: center;
 }
 
 .hidden {
@@ -352,7 +353,7 @@
         background-color: var(--paragraf);
         color: var(--text-dark);
         border-radius: 10px;
-        width: 30%;
+        width: 40%;
         transition: ease 0.5s;
         margin-top: 10px;
       }
