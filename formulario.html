@@ -9,15 +9,23 @@
   <section class="update-section">
     <h3>Atualizar Informações</h3>
     <form id="updateForm">
+      <label for="Imagem">Logo</label>
+        <input type="file" id="imageLogo" name="Logo">
+
         <label for="title">Título Inicial:</label>
         <input type="text" id="title" name="title" placeholder="Digite o título">
       
         <label for="description">Descrição Inicial:</label>
         <textarea id="description" name="description" placeholder="Digite a descrição"></textarea>
       
-        <label for="imageFile">Carregar Imagem:</label>
+        <label for="imageFile">Primeira Imagem de apresentação:</label>
         <input type="file" id="imageFile" name="imageFile" accept="image/*">
-      
+
+        <label for="secondImagem">Segunda Imagem</label>
+        <input type="file" id="secondImage" name="secondImagem">
+        
+        <label for="secondText">Segundo Texto</label>
+        <textarea name="secondText" id="secondText" placeholder="Digite o texto"></textarea>
         <button type="submit">Atualizar</button>
       </form>
       
