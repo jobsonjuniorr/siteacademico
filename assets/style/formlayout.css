@@ -1,0 +1,297 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    color: #ffffff; /* Texto branco */
+    background-color: var(--background);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    flex-direction: column;
+  }
+  
+  :root {
+    --blue-river: #00fb82;
+    --background: #123524;
+    --card: #121A13;
+    --text: #EFE3C2;
+    --text-title: #fff;
+    --text-link: #3d789b;
+    --text-dark: #000;
+    --paragraf: #fff;
+    --button-hover: #a8ff86;
+    --input: #212221;
+    
+  }
+  
+  .update-section {
+    background-color: #1e1e1e; /* Caixa escura */
+    border-radius: 20px; /* Bordas arredondadas */
+    padding: 20px 30px;
+    width: 90%;
+    max-width: 800px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    margin-top: 20px;
+  }
+  
+  .update-section h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: #f0f0f0; /* Título em cor clara */
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espaço entre os elementos */
+  }
+  
+  label {
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: #cccccc; /* Texto do label */
+  }
+  
+  input[type="text"],
+  textarea,
+  input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #333333; /* Bordas dos inputs */
+    border-radius: 8px;
+    background-color: #222222; /* Fundo dos inputs */
+    color: #ffffff; /* Texto nos inputs */
+    font-size: 1rem;
+  }
+  
+  textarea {
+    resize: none; /* Desativa redimensionamento */
+    height: 100px; /* Altura padrão */
+  }
+  
+  input[type="file"] {
+    padding: 8px;
+    font-size: 0.9rem;
+    cursor: pointer;
+  }
+  
+  button {
+    background-color: #4caf50; /* Verde */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #45a049; /* Verde mais escuro no hover */
+    transform: scale(1.05); /* Efeito de leve aumento */
+  }
+  
+  a {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: #4caf50;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+  }
+  
+  a:hover {
+    color: #45a049; /* Verde mais escuro no hover */
+  }
+  
+
+  header {
+    background-color: var(--menu);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.3);
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1rem;
+  }
+  
+  .logo {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--yellow-sun);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .text-logo {
+    color: var(--background);
+  }
+  
+  .menu-toggle {
+    display: none;
+    font-size: 1.2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--paragraf);
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.2rem;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-links li a {
+    text-decoration: none;
+    color: var(--paragraf);
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+
+  .nav-links li a:hover {
+    color: var(--button-hover);
+  }
+  
+  .logo-site {
+    width: 100px;
+    border-radius: 50%;
+  }
+
+
+  @media (max-width: 768px){
+    .menu-toggle {
+      display: block;
+    }
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 4rem;
+      right: 0;
+      height: 100%;
+      background-color: var(--background);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 0.5rem;
+      padding: 1rem;
+      width: 100%;
+      gap: 1rem;
+      z-index: 10;
+    }
+  
+    .nav-links.active {
+      display: flex;
+    }
+}
+
+
+.custom-file-upload {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: var(--input);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 150px;
+    height: 150px;
+  }
+
+  .custom-file-upload:hover {
+    background-color: #45a049;
+  }
+
+  .custom-file-upload i {
+    font-size: 1.2rem;
+  }
+
+  /* Esconde os inputs de arquivo */
+  input[type="file"] {
+    display: none;
+  }
+
+  .firts {
+    display: flex;
+    gap: 15px;
+  }
+
+  .addlogo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .addtitle {
+    display: flex;
+    align-items: start;
+    width: 100%;
+    margin-top: 1.5rem;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .addFirtImage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 22%;
+  }
+
+  .additional-fields {
+    display: flex;
+    gap: 1rem;
+
+  }
+
+  .field-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+  }
+  .inputabout{
+    width: 100%;
+  }
+  .textabout{
+    height: 79%;
+  }
+
+  .submit-button {
+    margin-top: 1.5rem;
+    background-color: var(--input);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+ 
+  .submit-button:hover {
+    background-color: #45a049;
+  }
+ 

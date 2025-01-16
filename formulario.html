@@ -1,36 +1,88 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Atualizar Informações</title>
+  <link rel="stylesheet" href="assets/style/formlayout.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="shortcut icon" href="assets/image/logo.jpeg" type="image/x-icon">
 </head>
+
 <body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="#inicio"><img class="logo-site" src="assets/image/logoatt.png" alt="Logo"></a>
+      </div>
+      <button class="menu-toggle" aria-label="Abrir menu">
+        ☰
+      </button>
+      <ul class="nav-links">
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#evento">Evento</a></li>
+        <li><a href="#palestrantes">Palestrantes</a></li>
+        <li><a href="cronograma.html">Inscreva-se</a></li>
+        <li><a href="formulario.html">Adiconar evento</a></li>
+      </ul>
+    </nav>
+  </header>
   <section class="update-section">
     <h3>Atualizar Informações</h3>
+  
     <form id="updateForm">
-      <label for="Imagem">Logo</label>
-        <input type="file" id="imageLogo" name="Logo">
-
-        <label for="title">Título Inicial:</label>
-        <input type="text" id="title" name="title" placeholder="Digite o título">
+   
+      <div class="addlogo">
+        <label for="">Escolher Logo</label>
+        <label for="imageLogo" class="custom-file-upload">
+          <i class='bx bx-image-add'></i>
+        </label>
+        <input type="file" id="imageLogo" name="Logo" hidden>
+      </div>
+  
+      <div class="firts">
+  
+        <div class="addFirtImage">
+          <label for="">Imagem de Início</label>
+          <label for="imageFile" class="custom-file-upload">
+            <i class='bx bx-image-add'></i>
+          </label>
+          <input type="file" id="imageFile" name="imageFile" accept="image/*" hidden>
+        </div>
+  
       
-        <label for="description">Descrição Inicial:</label>
-        <textarea id="description" name="description" placeholder="Digite a descrição"></textarea>
-      
-        <label for="imageFile">Primeira Imagem de apresentação:</label>
-        <input type="file" id="imageFile" name="imageFile" accept="image/*">
-
-        <label for="secondImagem">Segunda Imagem</label>
-        <input type="file" id="secondImage" name="secondImagem">
+        <div class="addtitle">
+          <input type="text" id="title" name="title" placeholder="Digite o título">
+          <textarea id="description" name="description" placeholder="Digite a descrição"></textarea>
+        </div>
+      </div>
+  
+      <div class="additional-fields">
+  
+        <div class="field-group">
+          <label for="secondImage">Imagem (Sobre)</label>
+          <label for="secondImage" class="custom-file-upload">
+            <i class='bx bx-image-add'></i>
+          </label>
+          <input type="file" id="secondImage" name="secondImage" hidden>
+        </div>
+  
         
-        <label for="secondText">Segundo Texto</label>
-        <textarea name="secondText" id="secondText" placeholder="Digite o texto"></textarea>
-        <button type="submit">Atualizar</button>
-      </form>
+        <div class="field-group inputabout">
+          <label for="secondText">Texto (Sobre)</label>
+          <textarea class="textabout" name="secondText" id="secondText" placeholder="Digite o texto"></textarea>
+        </div>
+      </div>
+  
       
+      <button type="submit" class="submit-button">Cadastrar Layout</button>
+    </form>
   </section>
+  
   <a href="index.html">Ver site novo</a>
   <script src="assets/js/newpage.js"></script>
 </body>
+
 </html>
