@@ -9,17 +9,15 @@ menuToggle.addEventListener('click', () => {
 
 document.addEventListener('DOMContentLoaded', async () => {
   try {
-    
     const response = await fetch('http://localhost:3000/api/formulario');
     const data = await response.json();
 
     if (data.length === 0) {
       document.getElementById('content-list').innerHTML = '<p>Nenhum conteúdo encontrado.</p>';
     } else {
-    
-      const content = data[0];  
+      const lastSelectedIndex = localStorage.getItem('selectedContentIndex'); // Recupera o índice salvo
+      const content = lastSelectedIndex !== null ? data[lastSelectedIndex] : data[0]; // Usa o índice salvo ou o primeiro
 
-      
       if (content.title) {
         document.querySelector('.init-title').textContent = content.title;
       }
@@ -50,28 +48,26 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 });
 
-
 document.addEventListener('DOMContentLoaded', () => {
-  // Função para carregar todos os dados da API
   async function fetchData() {
     try {
-      const response = await fetch('http://localhost:3000/api/formulario'); 
+      const response = await fetch('http://localhost:3000/api/formulario');
       const data = await response.json();
 
-     
       if (data.length === 0) {
         document.getElementById('button-container').innerHTML = '<p>Nenhum conteúdo encontrado.</p>';
         document.getElementById('content-display').innerHTML = '<p>Nenhum conteúdo para exibir.</p>';
       } else {
-        
         document.getElementById('button-container').innerHTML = '';
         document.getElementById('content-display').innerHTML = '';
 
-        
         data.forEach((content, index) => {
           const button = document.createElement('button');
           button.textContent = `Mostrar Item ${index + 1}`;
-          button.addEventListener('click', () => displayContent(content));
+          button.addEventListener('click', () => {
+            displayContent(content);
+            localStorage.setItem('selectedContentIndex', index); // Salva o índice selecionado
+          });
           document.getElementById('button-container').appendChild(button);
         });
       }
@@ -81,21 +77,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
- 
   function displayContent(content) {
-
     document.querySelector('.init-title').textContent = content.title || '';
     document.querySelector('.init-paragraf').textContent = content.description || '';
     document.querySelector('.about-paragraf').textContent = content.second_text || '';
-
 
     document.querySelector('.init-img').src = `http://localhost:3000/${content.image_path.replace(/\\/g, '/')}` || '';
     document.querySelector('.logo-site').src = `http://localhost:3000/${content.logo_path.replace(/\\/g, '/')}` || '';
     document.querySelector('.about-img').src = `http://localhost:3000/${content.second_image_path.replace(/\\/g, '/')}` || '';
   }
 
- 
   fetchData();
 });
-
-
