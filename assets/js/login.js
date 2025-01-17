@@ -31,7 +31,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     })
     .then(data => {
         if (data.message === 'Login realizado com sucesso.') {
-            window.location.href = 'index.html';
+            window.location.href = 'admin.html';
         } else {
             alert(data.message);
             email.value = '';
