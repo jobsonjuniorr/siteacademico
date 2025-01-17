@@ -15,9 +15,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (data.length === 0) {
       document.getElementById('content-list').innerHTML = '<p>Nenhum conteúdo encontrado.</p>';
     } else {
-      const lastSelectedIndex = localStorage.getItem('selectedContentIndex'); // Recupera o índice salvo
-      const content = lastSelectedIndex !== null ? data[lastSelectedIndex] : data[0]; // Usa o índice salvo ou o primeiro
-
+      const content = data[data.length - 1]
       if (content.title) {
         document.querySelector('.init-title').textContent = content.title;
       }

@@ -83,7 +83,7 @@ header {
 }
 
 .logo-site {
-  width: 100px;
+  max-width: 100px;
   border-radius: 50%;
 }
 
@@ -132,7 +132,7 @@ header {
 }
 
 .init-img {
-  width: 450px;
+  max-width: 450px;
   border-radius: 10px;
 }
 
@@ -166,7 +166,7 @@ header {
 }
 
 .about-img {
-  width: 550px;
+  max-width: 550px;
   border-radius: 10px;
 }
 
