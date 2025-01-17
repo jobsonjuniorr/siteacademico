@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exibição de Conteúdo</title>
+    <style>
+        .content-card {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px 0;
+            width: 300px;
+        }
+        .content-card img {
+            width: 100%;
+            height: auto;
+        }
+        .content-card h2 {
+            margin: 10px 0;
+        }
+        .content-card p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Conteúdos Cadastrados</h1>
+
+    <div id="content-list"></div> 
+
+    <script>
+        
+        async function fetchData() {
+            try {
+                const response = await fetch('http://localhost:3000/api/formulario'); 
+                const data = await response.json(); 
+
+              
+                if (data.length === 0) {
+                    document.getElementById('content-list').innerHTML = '<p>Nenhum conteúdo encontrado.</p>';
+                } else {
+                  
+                    const contentList = document.getElementById('content-list');
+                    contentList.innerHTML = ''; 
+
+                   
+                    data.forEach(content => {
+                        const card = document.createElement('div');
+                        card.classList.add('content-card');
+                        card.innerHTML = `
+                            <h2>${content.title}</h2>
+                            <p>${content.description}</p>
+                            <p>${content.second_text}</p>
+                            <img src="http://localhost:3000/${content.image_path}" alt="Imagem Principal">
+                            <img src="http://localhost:3000/${content.logo_path}" alt="Logo">
+                            <img src="http://localhost:3000/${content.second_image_path}" alt="Segunda Imagem">
+                        `;
+                        contentList.appendChild(card);
+                    });
+                }
+            } catch (error) {
+                console.error('Erro ao buscar dados:', error);
+                document.getElementById('content-list').innerHTML = '<p>Erro ao carregar os dados.</p>';
+            }
+        }
+        
+
+        // Chama a função para buscar os dados assim que a página for carregada
+        window.onload = fetchData;
+    </script>
+</body>
+</html>

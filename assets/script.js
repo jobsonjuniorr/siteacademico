@@ -7,38 +7,95 @@ menuToggle.addEventListener('click', () => {
   navLinks.classList.toggle('active');
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-  const savedData = JSON.parse(localStorage.getItem('updatedContent'));
+document.addEventListener('DOMContentLoaded', async () => {
+  try {
+    
+    const response = await fetch('http://localhost:3000/api/formulario');
+    const data = await response.json();
 
-  if (savedData) {
- 
-    if (savedData.title) {
-      document.querySelector('.init-title').textContent = savedData.title;
+    if (data.length === 0) {
+      document.getElementById('content-list').innerHTML = '<p>Nenhum conteúdo encontrado.</p>';
+    } else {
+    
+      const content = data[0];  
+
+      
+      if (content.title) {
+        document.querySelector('.init-title').textContent = content.title;
+      }
+
+      if (content.description) {
+        document.querySelector('.init-paragraf').textContent = content.description;
+      }
+
+      if (content.second_text) {
+        document.querySelector('.about-paragraf').textContent = content.second_text;
+      }
+
+      if (content.image_path) {
+        document.querySelector('.init-img').src = `http://localhost:3000/${content.image_path.replace(/\\/g, '/')}`;
+      }
+
+      if (content.logo_path) {
+        document.querySelector('.logo-site').src = `http://localhost:3000/${content.logo_path.replace(/\\/g, '/')}`;
+      }
+
+      if (content.second_image_path) {
+        document.querySelector('.about-img').src = `http://localhost:3000/${content.second_image_path.replace(/\\/g, '/')}`;
+      }
     }
-
- 
-    if (savedData.description) {
-      document.querySelector('.init-paragraf').textContent = savedData.description;
-    }
-
- 
-    if (savedData.image) {
-      document.querySelector('.init-img').src = savedData.image;
-    }
-
-  
-    if (savedData.logo) {
-      document.querySelector('.logo-site').src = savedData.logo;
-    }
-
-   
-    if (savedData.secondImage) {
-      document.querySelector('.about-img').src = savedData.secondImage;
-    }
-
-
-    if (savedData.secondText) {
-      document.querySelector('.about-paragraf').textContent = savedData.secondText;
-    }
+  } catch (error) {
+    console.error('Erro ao buscar dados:', error);
+    document.getElementById('content-list').innerHTML = '<p>Erro ao carregar os dados.</p>';
   }
 });
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Função para carregar todos os dados da API
+  async function fetchData() {
+    try {
+      const response = await fetch('http://localhost:3000/api/formulario'); 
+      const data = await response.json();
+
+     
+      if (data.length === 0) {
+        document.getElementById('button-container').innerHTML = '<p>Nenhum conteúdo encontrado.</p>';
+        document.getElementById('content-display').innerHTML = '<p>Nenhum conteúdo para exibir.</p>';
+      } else {
+        
+        document.getElementById('button-container').innerHTML = '';
+        document.getElementById('content-display').innerHTML = '';
+
+        
+        data.forEach((content, index) => {
+          const button = document.createElement('button');
+          button.textContent = `Mostrar Item ${index + 1}`;
+          button.addEventListener('click', () => displayContent(content));
+          document.getElementById('button-container').appendChild(button);
+        });
+      }
+    } catch (error) {
+      console.error('Erro ao buscar dados:', error);
+      document.getElementById('button-container').innerHTML = '<p>Erro ao carregar os dados.</p>';
+    }
+  }
+
+ 
+  function displayContent(content) {
+
+    document.querySelector('.init-title').textContent = content.title || '';
+    document.querySelector('.init-paragraf').textContent = content.description || '';
+    document.querySelector('.about-paragraf').textContent = content.second_text || '';
+
+
+    document.querySelector('.init-img').src = `http://localhost:3000/${content.image_path.replace(/\\/g, '/')}` || '';
+    document.querySelector('.logo-site').src = `http://localhost:3000/${content.logo_path.replace(/\\/g, '/')}` || '';
+    document.querySelector('.about-img').src = `http://localhost:3000/${content.second_image_path.replace(/\\/g, '/')}` || '';
+  }
+
+ 
+  fetchData();
+});
+
+
