@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/style/artigos.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+          <div class="logo">
+            <a href="#inicio"><img class="logo-site" src="assets/image/logoatt.png" alt="Logo"></a>
+          </div>
+          <button class="menu-toggle" aria-label="Abrir menu">
+            ☰
+          </button>
+          <ul class="nav-links">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="index.html">Sobre</a></li>
+            <li><a href="index.html">Evento</a></li>
+            <li><a href="index.html">Palestrantes</a></li>
+            <li><a href="cronograma.html">Inscreva-se</a></li>
+            <li><a href="formulario.html">Adiconar evento</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <section class="update-section">
+        <h1>Submissão de Artigo</h1>
+        <form id="articleForm" enctype="multipart/form-data">
+          <label for="title">Título do Artigo</label>
+          <input type="text" id="title" name="title" placeholder="Digite o título do artigo" required>
+      
+          <label for="authors">Autores</label>
+          <input type="text" id="authors" name="authors" placeholder="Digite os nomes dos autores" required>
+      
+          <label for="summary">Resumo Textual</label>
+          <textarea id="summary" name="summary" rows="5" placeholder="Digite o resumo do artigo" required></textarea>
+      
+          <label for="pdfFile">Arquivo PDF</label>
+          <input type="file" id="pdfFile" name="pdfFile" accept=".pdf" required>
+      
+          <button type="submit">Enviar Artigo</button>
+        </form>
+      </section>
+
+      <script src="assets/js/artigos.js"></script>
+</body>
+</html>
