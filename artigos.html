@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/style/artigos.css">
     <title>Document</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="shortcut icon" href="assets/image/logo.jpeg" type="image/x-icon">
 </head>
 <body>
   <header>
@@ -12,7 +14,7 @@
 
       <div class="logo">
       <a href="index.html"><img class="logo-site" src="assets/image/logoatt.png" alt="Logo"></a>
-      <h1 class="text-title">Submeter Artigos</h1>
+      <h1 class="text-title">PUBLIQUE SEU ARTIGO CIENTÍFICO</h1>
       </div>
       
       <button class="menu-toggle" aria-label="Abrir menu">
@@ -25,6 +27,7 @@
         <li><a href="index.html">Evento</a></li>
         <li><a href="index.html">Palestrantes</a></li>
         <li><a href="index.html">Local</a></li>
+        <li><a href="evento.html">Inscreva-se</a></li>
       </ul>
     </nav>
   </header>
@@ -32,19 +35,32 @@
       <section class="update-section">
   
         <form id="articleForm" enctype="multipart/form-data">
-          <label for="title">Título do Artigo</label>
-          <input type="text" id="title" name="title" placeholder="Digite o título do artigo" required>
+          <div class="firts">
+            <div class="addFirtImage">
+
+            <label for="pdfFile">Arquivo PDF</label>
+            <label for="imageLogo" class="custom-file-upload">
+              <i class='bx bx-image-add'></i>
+            </label>
+            
+            <input type="file" id="pdfFile" name="pdfFile" accept=".pdf" required>
+            </div>
+
+            <div class="text-form">
+              <label for="title">Título do Artigo</label>
+              <input type="text" id="title" name="title" placeholder="Digite o título do artigo" required>
+              <label for="authors">Autores</label>
+              <input type="text" id="authors" name="authors" placeholder="Digite os nomes dos autores" required>
+            </div>
+
+            </div>
+         
+          <div class="addtitle">
+            <label for="summary">Resumo Textual</label>
+            <textarea id="summary" name="summary" rows="5" placeholder="Digite o resumo do artigo" required></textarea>
+          </div>
       
-          <label for="authors">Autores</label>
-          <input type="text" id="authors" name="authors" placeholder="Digite os nomes dos autores" required>
-      
-          <label for="summary">Resumo Textual</label>
-          <textarea id="summary" name="summary" rows="5" placeholder="Digite o resumo do artigo" required></textarea>
-      
-          <label for="pdfFile">Arquivo PDF</label>
-          <input type="file" id="pdfFile" name="pdfFile" accept=".pdf" required>
-      
-          <button type="submit">Enviar Artigo</button>
+          <button class="submit-button" type="submit">Enviar Artigo</button>
         </form>
       </section>
 
