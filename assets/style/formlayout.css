@@ -17,7 +17,6 @@
   }
   
   :root {
-    --blue-river: #00fb82;
     --background: #123524;
     --card: #121A13;
     --text: #EFE3C2;
@@ -25,13 +24,14 @@
     --text-link: #3d789b;
     --text-dark: #000;
     --paragraf: #fff;
-    --button-hover: #a8ff86;
+    --button-hover: #00fb82;
     --input: #212221;
+    --second-card:#1e1e1e;
     
   }
   
   .update-section {
-    background-color: #1e1e1e; /* Caixa escura */
+    background-color: var(--second-card); /* Caixa escura */
     border-radius: 20px; /* Bordas arredondadas */
     padding: 20px 30px;
     width: 90%;
@@ -56,7 +56,7 @@
   label {
     font-size: 1rem;
     margin-bottom: 5px;
-    color: #cccccc; /* Texto do label */
+    color: #cccccc;
   }
   
   input[type="text"],
@@ -64,16 +64,16 @@
   input[type="file"] {
     width: 100%;
     padding: 10px;
-    border: 1px solid #333333; /* Bordas dos inputs */
+    border: 1px solid #333333;
     border-radius: 8px;
-    background-color: #222222; /* Fundo dos inputs */
-    color: #ffffff; /* Texto nos inputs */
+    background-color: #222222; 
+    color: #ffffff;
     font-size: 1rem;
   }
   
   textarea {
-    resize: none; /* Desativa redimensionamento */
-    height: 100px; /* Altura padrão */
+    resize: none;
+    height: 100px; 
   }
   
   input[type="file"] {
@@ -81,36 +81,14 @@
     font-size: 0.9rem;
     cursor: pointer;
   }
-  
-  button {
-    background-color: #4caf50; /* Verde */
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 10px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-  
-  button:hover {
-    background-color: #45a049; /* Verde mais escuro no hover */
-    transform: scale(1.05); /* Efeito de leve aumento */
-  }
-  
-  a {
-    display: block;
-    text-align: center;
-    margin-top: 20px;
-    color: #4caf50;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1rem;
-  }
-  
-  a:hover {
-    color: #45a049; 
-  }
+ 
+  .text-title{
+    font-size: 1.4rem;
+    border-left: 1px solid white;
+    text-transform: uppercase;
+    padding: 10px;
+   
+}
   
 
   header {
@@ -198,6 +176,12 @@
     .nav-links.active {
       display: flex;
     }
+    .text-title{
+      font-size: 1rem;
+      border-left: 1px solid white;
+      padding: 10px;
+      text-transform: uppercase;
+    }
 }
 
 
@@ -281,7 +265,7 @@
   }
 
   .submit-button {
-    margin-top: 1.5rem;
+    margin-top: 1.7rem;
     background-color: var(--input);
     color: white;
     border: none;
@@ -289,9 +273,12 @@
     padding: 10px 20px;
     cursor: pointer;
     transition: all 0.3s ease;
+    width: 50%;
+    margin: auto;
   }
  
   .submit-button:hover {
-    background-color: #45a049;
+    background-color: var(--button-hover);
+    color: var(--text-dark);
   }
  
