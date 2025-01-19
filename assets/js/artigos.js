@@ -1,3 +1,20 @@
+function showAlert(message, type = "success") {
+    const alertBox = document.getElementById("alert-box");
+    
+ 
+    alertBox.textContent = message;
+    alertBox.className = `alert-box ${type === "error" ? "alert-error" : type === "info" ? "alert-info" : ""}`;
+    
+
+    alertBox.classList.remove("hidden");
+    
+
+    setTimeout(() => {
+        alertBox.classList.add("hidden");
+    }, 3000);
+}
+
+
 document.getElementById('articleForm').addEventListener('submit', async function(event) {
     event.preventDefault(); 
     
@@ -7,7 +24,11 @@ document.getElementById('articleForm').addEventListener('submit', async function
     const summary = document.getElementById('summary').value;
     const pdfFile = document.getElementById('pdfFile').files[0];
 
-    // Adiciona os dados ao FormData
+    if(!title || !authors ||  !summary || !pdfFile){
+        showAlert('Preencha todos os campos','error')
+        return
+    }
+
     formData.append('title', title);
     formData.append('authors', authors);
     formData.append('summary', summary);
@@ -21,11 +42,11 @@ document.getElementById('articleForm').addEventListener('submit', async function
         });
 
         if (response.ok) {
-            alert('Artigo enviado com sucesso!');
+            showAlert('Artigo enviado com sucesso!','success');
             document.getElementById('articleForm').reset();
 
         } else {
-            alert('Erro ao enviar artigo: ' + error.message);
+          showAlert('Erro ao enviar artigo', 'error');
             document.getElementById('articleForm').reset();
 
         }

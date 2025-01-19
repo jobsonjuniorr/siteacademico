@@ -39,6 +39,7 @@
       <section class="update-section">
   
         <form id="articleForm" enctype="multipart/form-data">
+          <div id="alert-box" class="alert-box hidden"></div>
           <div class="firts">
 
             <div class="addFirtImage">
@@ -47,21 +48,21 @@
                 <i class='bx bx-image-add'></i>
               </label>
             
-            <input type="file" id="pdfFile" name="pdfFile" accept=".pdf" required>
+            <input type="file" id="pdfFile" name="pdfFile" accept=".pdf" >
             </div>
 
             <div class="text-form">
               <label for="title">Título do Artigo</label>
-              <input type="text" id="title" name="title" placeholder="Digite o título do artigo" required>
+              <input type="text" id="title" name="title" placeholder="Digite o título do artigo" >
               <label for="authors">Autores</label>
-              <input type="text" id="authors" name="authors" placeholder="Digite os nomes dos autores" required>
+              <input type="text" id="authors" name="authors" placeholder="Digite os nomes dos autores">
             </div>
 
             </div>
          
           <div class="addtitle">
             <label for="summary">Resumo Textual</label>
-            <textarea id="summary" name="summary" rows="5" placeholder="Digite o resumo do artigo" required></textarea>
+            <textarea id="summary" name="summary" rows="5" placeholder="Digite o resumo do artigo" ></textarea>
           </div>
       
           <button class="submit-button" type="submit">Enviar Artigo</button>

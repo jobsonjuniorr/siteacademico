@@ -1,3 +1,20 @@
+function showAlert(message, type = "success") {
+    const alertBox = document.getElementById("alert-box");
+    
+ 
+    alertBox.textContent = message;
+    alertBox.className = `alert-box ${type === "error" ? "alert-error" : type === "info" ? "alert-info" : ""}`;
+    
+
+    alertBox.classList.remove("hidden");
+    
+
+    setTimeout(() => {
+        alertBox.classList.add("hidden");
+    }, 3000);
+}
+
+
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('updateForm');
   form.addEventListener('submit', (event) => {
@@ -12,7 +29,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const secondImageFile = document.getElementById('secondImage').files[0];    
   
 
-
+    if(!newTitle || !newDescription || !newSecondText || !imageFile || !logoFile || !secondImageFile){
+        showAlert("Preencha todos os campos!","error")
+        return
+    }
   
     const formData = new FormData();
     formData.append('title', newTitle);
@@ -36,11 +56,11 @@ document.addEventListener('DOMContentLoaded', () => {
             return response.json();
         })
         .then((data) => {
-            alert('Formulário enviado com sucesso!');
+            showAlert('Formulário enviado com sucesso!',"success");
             form.reset()
         })
         .catch((error) => {
-            console.error('Erro:', error);
+            showAlert('Erro no envio do formulario',"error");
             form.reset()
         });
 });

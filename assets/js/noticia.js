@@ -1,3 +1,20 @@
+function showAlert(message, type = "success") {
+    const alertBox = document.getElementById("alert-box");
+    
+ 
+    alertBox.textContent = message;
+    alertBox.className = `alert-box ${type === "error" ? "alert-error" : type === "info" ? "alert-info" : ""}`;
+    
+
+    alertBox.classList.remove("hidden");
+    
+
+    setTimeout(() => {
+        alertBox.classList.add("hidden");
+    }, 3000);
+}
+
+
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('updateForm');
     form.addEventListener('submit', (event) => {
@@ -7,7 +24,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const newtitleNoticia = document.getElementById('titleNoticia').value
         const newdescriptionNoticia = document.getElementById('descriptionNoticia').value
 
-
+        if(!noticiaImageFile || !newtitleNoticia || !newdescriptionNoticia){
+            showAlert("Preencha todos os campos","error")
+            return
+        }
         const formData = new FormData();
 
         formData.append('tilleNoticia', newtitleNoticia)
@@ -26,11 +46,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 return response.json();
             })
             .then((data) => {
-                alert('Formulário enviado com sucesso!');
+                showAlert('Formulário enviado com sucesso!', 'success');
                 form.reset()
             })
             .catch((error) => {
-                console.error('Erro:', error);
+                showAlert('Erro no envio do formulario!','error')
                 form.reset()
             });
     });
