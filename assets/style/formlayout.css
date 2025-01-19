@@ -152,40 +152,7 @@
     border-radius: 50%;
   }
 
-
-  @media (max-width: 768px){
-    .menu-toggle {
-      display: block;
-    }
-    .nav-links {
-      display: none;
-      flex-direction: column;
-      position: absolute;
-      top: 4rem;
-      right: 0;
-      height: 100%;
-      background-color: var(--background);
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      border-radius: 0.5rem;
-      padding: 1rem;
-      width: 100%;
-      gap: 1rem;
-      z-index: 10;
-    }
-  
-    .nav-links.active {
-      display: flex;
-    }
-    .text-title{
-      font-size: 1rem;
-      border-left: 1px solid white;
-      padding: 10px;
-      text-transform: uppercase;
-    }
-}
-
-
-.custom-file-upload {
+  .custom-file-upload {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -243,6 +210,7 @@
     align-items: center;
     justify-content: center;
     width: 22%;
+   
   }
 
   .additional-fields {
@@ -255,13 +223,20 @@
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
 
   }
+ 
   .inputabout{
     width: 100%;
+    margin-top: 1rem;
+ 
   }
   .textabout{
-    height: 79%;
+    height: 80%;
+    outline: none;
+    width: 100%;
   }
 
   .submit-button {
@@ -282,3 +257,74 @@
     color: var(--text-dark);
   }
  
+
+  @media (max-width: 768px){
+    .menu-toggle {
+      display: block;
+    }
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 4rem;
+      right: 0;
+      height: 100%;
+      background-color: var(--background);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 0.5rem;
+      padding: 1rem;
+      width: 100%;
+      gap: 1rem;
+      z-index: 10;
+    }
+  
+    .nav-links.active {
+      display: flex;
+    }
+    .text-title{
+      font-size: 1rem;
+      border-left: 1px solid white;
+      padding: 10px;
+      text-transform: uppercase;
+    }
+    .firts {
+      display: flex;
+      gap: 15px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    } 
+    .additional-fields {
+      display: flex;
+      gap: 0.2rem;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .addtitle {
+      display: flex;
+      align-items: start;
+      width: 100%;
+      margin-top: 1.5rem;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    textarea{
+      outline: none;
+      
+    }
+    .text-title-form{
+      text-align: center;
+      width: 100%;
+      font-size: 1.3rem;
+    }
+    .addFirtImage {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;     
+    }
+  
+}
+
