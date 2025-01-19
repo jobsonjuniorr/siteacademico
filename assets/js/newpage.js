@@ -50,9 +50,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 });
 
-
-
-
 const menuToggle = document.querySelector('.menu-toggle');
 const navLinks = document.querySelector('.nav-links');
 
@@ -60,3 +57,32 @@ const navLinks = document.querySelector('.nav-links');
 menuToggle.addEventListener('click', () => {
   navLinks.classList.toggle('active');
 });
+
+window.onload = function () {
+    const token = localStorage.getItem('authToken');
+
+    if (!token) {
+        window.location.href = 'login.html';
+        return;
+    }
+
+    fetch('http://localhost:3000/api/login/admin', {
+        method: 'GET',
+        headers: {
+            'Authorization': `Bearer ${token}`
+        }
+    })
+        .then(response => {
+            if (response.status === 401) {
+                window.location.href = 'login.html';
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('Dados do formulário recebidos:', data);
+        })
+        .catch(error => {
+            console.error(error);
+            window.location.href = 'login.html';
+        });
+};

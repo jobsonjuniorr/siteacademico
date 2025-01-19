@@ -256,6 +256,13 @@
     background-color: var(--button-hover);
     color: var(--text-dark);
   }
+  textarea{
+    outline: none;
+    
+  }
+  input{
+    outline: none;
+  }
  
 
   @media (max-width: 768px){

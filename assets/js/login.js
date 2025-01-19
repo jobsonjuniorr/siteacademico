@@ -1,6 +1,6 @@
 document.getElementById('loginForm').addEventListener('submit', function(event) {
     event.preventDefault();
-    
+
     const email = document.getElementById('email');
     const senha = document.getElementById('senha');
 
@@ -18,7 +18,6 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     })
     .then(response => {
         if (!response.ok) {
-          
             if (response.status === 401) {
                 throw new Error('E-mail ou senha incorretos.');
             }
@@ -31,6 +30,8 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     })
     .then(data => {
         if (data.message === 'Login realizado com sucesso.') {
+           
+            localStorage.setItem('authToken', data.token);
             window.location.href = 'admin.html';
         } else {
             alert(data.message);
@@ -39,7 +40,6 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
         }
     })
     .catch(error => {
-        // Trate o erro sem exibi-lo no console
         alert(error.message);
         email.value = '';
         senha.value = '';
