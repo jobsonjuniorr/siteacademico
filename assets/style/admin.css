@@ -27,7 +27,7 @@
     --paragraf: #fff;
     --button-hover: #a8ff86;
     --input: #212221;
-    --card-second:#1e1e1e;
+    --card-second:#272727 ;
     
   }
   header {
@@ -130,7 +130,6 @@
   color: var(--text-title);
   margin-bottom: 20px;
   text-align: center;
-  border-bottom: 2px solid var(--blue-river);
   padding-bottom: 10px;
 }
 
@@ -142,12 +141,14 @@
 
 .artigo-item {
   background-color: var(--card);
-  border: 1px solid var(--blue-river);
   border-radius: 8px;
   padding: 15px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   transition: transform 0.2s, box-shadow 0.2s;
+  word-wrap: break-wor;
+  overflow-wrap: break-word;
 }
+
 
 .artigo-item:hover {
   box-shadow: 0 10px 8px rgba(0, 0, 0, 0.4);
@@ -155,18 +156,18 @@
 
 .artigo-item h3 {
   font-size: 1.5rem;
-  color: var(--blue-river);
+  color: var(--text-title);
   margin-bottom: 10px;
+}
+.artigo-item h4 {
+  color: var(--paragraf);
 }
 
 .artigo-item p {
-  margin: 5px 0;
+ margin-top: 0.5rem;
   color: var(--paragraf);
-  line-height: 1.6;
-}
-
-.artigo-item p strong {
-  color: var(--text-title);
+  line-height: 1.4;
+  width: 100%;
 }
 
 

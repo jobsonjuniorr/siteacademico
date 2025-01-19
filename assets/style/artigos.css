@@ -58,7 +58,7 @@ form {
 label {
   font-size: 1rem;
   margin-bottom: 5px;
-  color: #cccccc; /* Texto do label */
+  color: #cccccc; 
 }
 
 input[type="text"],
@@ -66,16 +66,18 @@ textarea,
 input[type="file"] {
   width: 100%;
   padding: 10px;
-  border: 1px solid #333333; /* Bordas dos inputs */
+  border: 1px solid #333333; 
   border-radius: 8px;
-  background-color: #222222; /* Fundo dos inputs */
-  color: #ffffff; /* Texto nos inputs */
+  background-color: #222222;
+  color: #ffffff; 
   font-size: 1rem;
+  outline: none;
 }
 
 textarea {
-  resize: none; /* Desativa redimensionamento */
-  height: 100px; /* Altura padrão */
+  resize: none;
+  height: 100%;
+  outline: none;
 }
 
 input[type="file"] {
@@ -88,7 +90,6 @@ input[type="file"] {
     border-left: 1px solid white;
     text-transform: uppercase;
     padding: 10px;
-   
 }
 
 header {

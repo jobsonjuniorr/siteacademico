@@ -18,7 +18,7 @@ async function loadArtigos() {
                     artigoElement.classList.add('artigo-item');
                     artigoElement.innerHTML = `
                         <h3><strong>Título:</strong> ${artigo.titulo}</h3>
-                        <p><strong>Autores:</strong> ${artigo.autores}</p>
+                        <h4><strong>Autores:</strong> ${artigo.autores}</h4>
                         <p><strong>Resumo:</strong> ${artigo.resumo}</p>
                         <!-- Link para visualizar o PDF -->
                         <a href="http://localhost:3000/api/artigos/${artigo.id}/pdf" target="_blank">Visualizar PDF</a>

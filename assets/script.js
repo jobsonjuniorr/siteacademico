@@ -56,3 +56,28 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 });
 
+
+document.addEventListener('DOMContentLoaded', async () => {
+  try {
+    const response = await fetch('http://localhost:3000/api/noticias');
+    const data = await response.json();
+
+    if (data.length === 0) {
+      document.getElementById('content-list').innerHTML = '<p>Nenhum conteúdo encontrado.</p>';
+    } else {
+      const content = data[data.length - 1]
+   
+      if(content.title_noticia){
+        document.querySelector('.noticia-title').textContent = content.title_noticia;
+      }
+      if(content.description_noticia){
+        document.querySelector('.noticia-description').textContent = content.description_noticia;
+      }
+      if(content.noticia_image_path){
+        document.querySelector('.img-noticia').src = `http://localhost:3000/${content.noticia_image_path.replace(/\\/g, '/')}`
+      }
+    }
+  } catch (error) {
+    console.error('Erro ao buscar dados:', error);
+  }
+});
