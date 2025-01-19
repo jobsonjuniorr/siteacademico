@@ -3,11 +3,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
 body {
   font-family: Arial, sans-serif;
-  color: #ffffff; /* Texto branco */
+  color: #ffffff; 
   background-color: var(--background);
   display: flex;
   justify-content: center;
@@ -31,8 +32,8 @@ body {
 }
 
 .update-section {
-  background-color: #1e1e1e; /* Caixa escura */
-  border-radius: 20px; /* Bordas arredondadas */
+  background-color: #1e1e1e; 
+  border-radius: 20px; 
   padding: 20px 30px;
   width: 90%;
   max-width: 800px;

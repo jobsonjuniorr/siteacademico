@@ -316,7 +316,7 @@ header {
   height: 100vh;
   align-items: center;
   justify-content: center;
-
+ 
 }
 
 .box-presentation-links {
@@ -326,7 +326,12 @@ header {
   align-items: center;
   gap: 10px;
 }
-
+iframe{
+  margin-bottom: 15px;
+  border-radius: 10px;
+  border: none;
+  max-width: 500px;
+}
 .box-presentation-links p {
   font-size: 1rem;
   width: 80%;
@@ -563,6 +568,13 @@ footer {
   .nav-links.active {
     display: flex;
 
+  }
+  iframe{
+    margin-bottom: 15px;
+    border-radius: 10px;
+    border: none;
+    max-width: 350px;
+    max-height: 250px;
   }
 
   .init-presentation {

@@ -10,25 +10,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const imageFile = document.getElementById('imageFile').files[0];
     const logoFile = document.getElementById('imageLogo').files[0];
     const secondImageFile = document.getElementById('secondImage').files[0];    
-    const noticiaImageFile = document.getElementById('imageNoiticia').files[0]
-    const newtitleNoticia  = document.getElementById('titleNoticia').value
-    const newdescriptionNoticia = document.getElementById('descriptionNoticia').value
+  
 
 
-    console.log(noticiaImageFile)
+  
     const formData = new FormData();
     formData.append('title', newTitle);
     formData.append('description', newDescription);
     formData.append('secondText', newSecondText);
-    formData.append('tilleNoticia',newtitleNoticia)
-    formData.append('descriptionNoticia', newdescriptionNoticia)
+
+
     
     if (imageFile) formData.append('image', imageFile);
     if (logoFile) formData.append('logo', logoFile);
     if (secondImageFile) formData.append('secondImage', secondImageFile);
-    if (noticiaImageFile) formData.append('noticiaImage', noticiaImageFile)
-
-
+   
     fetch('http://localhost:3000/api/formulario', {
         method: 'POST',
         body: formData,
