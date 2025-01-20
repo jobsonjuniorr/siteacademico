@@ -49,6 +49,7 @@ header {
   font-size: 1.2rem;
   font-weight: bold;
   color: var(--yellow-sun);
+  max-width: 80px;
 }
 
 .text-logo {
@@ -84,7 +85,7 @@ header {
 }
 
 .logo-site {
-  max-width: 100px;
+  max-width: 100%;
   border-radius: 50%;
 }
 
@@ -100,8 +101,7 @@ header {
 
 .init-box-firts {
   padding: 10px;
-  max-height: 100%;
-  max-width: 496px;
+  width: 496px;
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -584,7 +584,7 @@ footer {
   }
 
   .init-img {
-    width: 350px;
+    max-width: 350px;
   }
 
   .init-box-firts {
@@ -593,6 +593,7 @@ footer {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    
   }
 
   .init-title {
