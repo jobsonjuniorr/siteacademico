@@ -313,10 +313,10 @@ header {
 
 .presentation-links {
   display: flex;
-  height: 100vh;
+  height: 115vh;
   align-items: center;
   justify-content: center;
- 
+  flex-direction: column;
 }
 
 .box-presentation-links {
@@ -331,6 +331,7 @@ iframe{
   border-radius: 10px;
   border: none;
   max-width: 500px;
+  max-height: 350px;
 }
 .box-presentation-links p {
   font-size: 1rem;
